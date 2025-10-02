@@ -1,0 +1,225 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Visually hidden utility for accessibility */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+body {
+	font-family: 'Segoe UI', Arial, sans-serif;
+	background: #fafbfc;
+	color: #181818;
+	margin: 0;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 700px;
+	margin: 40px auto;
+	background: #fff;
+	border: 2px solid #222;
+	border-radius: 28px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 32px 24px;
+	box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+	gap: 32px;
+}
+
+.profile-form {
+	flex: 1 1 320px;
+	min-width: 280px;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+label {
+	font-size: 1.08rem;
+	font-weight: 500;
+	margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	font-size: 1.1rem;
+	padding: 10px 14px;
+	border: 2px solid #bbb;
+	border-radius: 10px;
+	background: #f6f6f6;
+	color: #222;
+	transition: border-color 0.2s;
+}
+
+input:focus {
+	outline: 2px solid #222;
+	border-color: #222;
+	background: #fff;
+}
+
+input[aria-invalid="true"] {
+	border-color: #e53935;
+	color: #b71c1c;
+	background: #fff0f0;
+}
+
+.error-message {
+	min-height: 18px;
+	font-size: 0.98rem;
+	color: #e53935;
+	margin-left: 2px;
+}
+
+.password-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.password-wrapper input {
+	flex: 1;
+}
+
+.toggle-password {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-left: -36px;
+	padding: 0 8px;
+	font-size: 1.2rem;
+	color: #222;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	transition: color 0.2s;
+}
+.toggle-password:focus {
+	outline: 2px solid #222;
+	color: #0078d4;
+}
+
+.update-btn {
+	margin-top: 10px;
+	padding: 12px 0;
+	background: #111;
+	color: #fff;
+	font-size: 1.15rem;
+	border: none;
+	border-radius: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+	transition: background 0.2s;
+}
+.update-btn:focus {
+	outline: 2px solid #222;
+	background: #222;
+}
+
+.profile-progress {
+	flex: 1 1 220px;
+	min-width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 18px;
+	background: #fafbfc;
+	border-radius: 18px;
+	padding: 18px 12px 24px 12px;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+}
+
+.progress-circle {
+	position: relative;
+	width: 90px;
+	height: 90px;
+	margin-bottom: 6px;
+}
+.progress-circle svg {
+	display: block;
+	width: 90px;
+	height: 90px;
+}
+.progress-bg {
+	fill: none;
+	stroke: #d3d3d3;
+	stroke-width: 6;
+}
+.progress-bar {
+	fill: none;
+	stroke: #111;
+	stroke-width: 6;
+	stroke-linecap: round;
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+	transition: stroke-dashoffset 0.5s;
+}
+.progress-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #222;
+}
+
+.profile-progress h2 {
+	font-size: 1.18rem;
+	font-weight: 500;
+	margin: 0 0 8px 0;
+	text-align: center;
+}
+
+.checklist {
+	background: #ededed;
+	border-radius: 16px;
+	padding: 16px 18px;
+	margin: 0;
+	list-style: none;
+	font-size: 1.05rem;
+	color: #222;
+	min-width: 180px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.checklist li {
+	margin-bottom: 7px;
+}
+.checklist li:last-child {
+	margin-bottom: 0;
+}
+.checklist del {
+	color: #888;
+}
+
+@media (max-width: 800px) {
+	.container {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 24px;
+		padding: 18px 6px;
+	}
+	.profile-progress {
+		align-items: flex-start;
+		min-width: 0;
+		width: 100%;
+	}
+}

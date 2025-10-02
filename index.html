@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accessible Profile Form UI</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="container" aria-labelledby="profile-form-title">
+		<form class="profile-form" autocomplete="off" novalidate>
+			<h1 id="profile-form-title" class="visually-hidden">Update Profile</h1>
+			<div class="form-group">
+				<label for="full-name">Full Name</label>
+				<input id="full-name" name="full-name" type="text" aria-required="true" placeholder="What should we call you?" autocomplete="name">
+				<div class="error-message" id="full-name-error" aria-live="polite"></div>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input id="email" name="email" type="email" aria-required="true" aria-invalid="true" aria-describedby="email-error" value="john@doe.com" autocomplete="email">
+				<div class="error-message" id="email-error" aria-live="polite">Email is already taken</div>
+			</div>
+			<div class="form-group">
+				<label for="password">Enter Password</label>
+				<div class="password-wrapper">
+					<input id="password" name="password" type="password" aria-required="true" aria-describedby="password-error" autocomplete="new-password">
+					<button type="button" class="toggle-password" aria-label="Show password" tabindex="0">
+						<span aria-hidden="true">&#128065;</span>
+					</button>
+				</div>
+				<div class="error-message" id="password-error" aria-live="polite"></div>
+			</div>
+			<div class="form-group">
+				<label for="confirm-password">Confirm Password</label>
+				<div class="password-wrapper">
+					<input id="confirm-password" name="confirm-password" type="password" aria-required="true" aria-describedby="confirm-password-error" autocomplete="new-password">
+					<button type="button" class="toggle-password" aria-label="Show password" tabindex="0">
+						<span aria-hidden="true">&#128065;</span>
+					</button>
+				</div>
+				<div class="error-message" id="confirm-password-error" aria-live="polite"></div>
+			</div>
+			<button type="submit" class="update-btn">Update Profile</button>
+		</form>
+		<aside class="profile-progress" aria-label="Profile Completeness">
+			<div class="progress-circle" role="img" aria-label="65 percent profile complete">
+				<svg width="90" height="90" viewBox="0 0 90 90">
+					<circle class="progress-bg" cx="45" cy="45" r="40" />
+					<circle class="progress-bar" cx="45" cy="45" r="40" stroke-dasharray="251.2" stroke-dashoffset="88" />
+				</svg>
+				<span class="progress-text">65%</span>
+			</div>
+			<h2>Profile Completeness</h2>
+			<ul class="checklist">
+				<li><del>Create Account</del></li>
+				<li><del>Update Roadmap Progress</del></li>
+				<li><del>Setup Public Profile</del></li>
+				<li>Complete your first project</li>
+				<li>Invite your Friends</li>
+			</ul>
+		</aside>
+	</main>
+</body>
+</html>
